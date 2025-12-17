@@ -70,10 +70,13 @@ export function useUserById(id?: string, autoLoad = true) {
         }
     }, [id]);
     useEffect(() => {
+        // chạy sau render
         if (autoLoad) {
             getUserById();
         }
-        return () => abortControllerRef.current?.abort();
+        return () =>
+            // cleanup khi unmount
+            abortControllerRef.current?.abort();
     }, [autoLoad, id, getUserById]);
 
     return { user, loading, error, reload: getUserById };
