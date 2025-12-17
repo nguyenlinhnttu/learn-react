@@ -1,33 +1,21 @@
+import { useUserById } from "../hooks/userHooks";
+import ErrorMessage from "../component/ErrorMesssage";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import type { User } from "../types/user.type";
 
 function UserDetail() {
-  const { id } = useParams<{ id: string }>();
-  const [user, setUser] = useState<User | null>(null);
-  const controllerRef = useRef<AbortController | null>(null);
+  const { id } = useParams();
+  console.log("UserDetail id:", id);
+  const { user, loading, error, reload: getUserById } = useUserById(id, true);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    controllerRef.current = controller;
-
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-      signal: controller.signal,
-    })
-      .then(res => res.json())
-      .then(setUser);
-
-    return () => controller.abort();
-  }, [id]);
-
-  if (!user) return <p>Loading...</p>;
-
+  if (loading) return <p>Loading...</p>;
+  if (error) return <ErrorMessage error={error} onRetry={getUserById} />;
+  if (!user) return <p>No user found.</p>;
   return (
     <div>
       <h2>{user.name}</h2>
       <p>{user.email}</p>
-
-        <p><a href="/">Back To Home</a></p>
+      <p><a href="/users">Back  To Users</a></p>
+      <p><a href="/">Back To Home</a></p>
     </div>
   );
 }
