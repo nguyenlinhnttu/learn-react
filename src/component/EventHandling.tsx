@@ -1,14 +1,14 @@
 import { useState } from "react"
-function InputExample(){
+function InputExample() {
     const [text, setText] = useState("");
 
-    const handleChange = (e) =>{
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);
-    }
+    };
 
-    return(
+    return (
         <div>
-            <input type ="text" value ={text} onChange={handleChange}></input>
+            <input type="text" value={text} onChange={handleChange}></input>
             <p> You typed: {text}</p>
         </div>
     )
