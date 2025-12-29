@@ -10,7 +10,7 @@ import ListRendering from './component/ListRendering.tsx'
 import ConditionalExample from './component/ConditionRendering.tsx'
 import Exercises from './component/Exercises.tsx'
 import UseEffectExample from './component/UseEffectExample.tsx'
-
+import DemoHookType from './hooks/demoHookType.tsx'
 // ReactDOM.createRoot(document.getElementById('root')!).render(
 //   <StrictMode>
 //     <UseEffectExample />

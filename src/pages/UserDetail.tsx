@@ -8,7 +8,7 @@ function UserDetail() {
   const { user, loading, error, reload: getUserById } = useUserById(id, true);
   if (error) return <ErrorMessage error={error} onRetry={getUserById} />;
 
-  function ActionBack(){
+  function ActionBack() {
     return (
       <div>
         <a href="/users">Back  To Users  |  </a>
@@ -16,14 +16,22 @@ function UserDetail() {
       </div>
     )
   }
-  
+
+  function DisplayUserInfo({name , email} ) {
+    return (
+      <div>
+        <h2 style={{ color: 'red' }}>{name}</h2>
+        <p>{email}</p>
+      </div>
+    )
+  }
+
   return (
     <div className="container">
       {loading && <p>Loading...</p>}
-      {!user ? <p style={{color : 'red', fontSize :"24px"}}>No user found.</p> : <>  
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-         <ActionBack/>
+      {!user ? <p style={{ color: 'red', fontSize: "24px" }}>No user found.</p> : <>
+        <DisplayUserInfo name={user.name} email={user.email} />
+        <ActionBack />
       </>}
 
     </div>
