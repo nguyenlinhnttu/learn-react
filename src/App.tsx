@@ -7,6 +7,8 @@ import ListClips from "./pages/ListClips";
 import TodoList from "./component/TodoList";
 import DemoPreviewAvatar from "./component/DemoPreviewAvatar";
 import DemoGlobalEvent from "./component/DemoGlobalEvent";
+import DemoUseRef from "./component/DemoUseRef";
+
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
         <Link to="/clips">Clips</Link>  |{" "}
         <Link to="/todo-list">Todo List</Link>  |{" "}
         <Link to="/preview-avatar">Preview Avatar</Link> |{" "}
-        <Link to="/global-event">Global Event Demo</Link>
+        <Link to="/global-event">Global Event Demo</Link>  |{" "}
+         <Link to="/use-ref">Use Ref Demo</Link>
       </nav>
 
       <Routes>
@@ -28,6 +31,7 @@ function App() {
         <Route path="/todo-list" element={<TodoList />} />
         <Route path="/preview-avatar" element={<DemoPreviewAvatar />} />
         <Route path="/global-event" element={<DemoGlobalEvent />} />
+        <Route path="/use-ref" element={<DemoUseRef />} />
       </Routes>
     </>
   );
