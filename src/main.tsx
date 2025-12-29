@@ -16,6 +16,17 @@ import DemoHookType from './hooks/demoHookType.tsx'
 //     <UseEffectExample />
 //   </StrictMode>,
 // )
+
+//  Send Global Event Demo
+function sendGlobalEvent() {
+  setInterval(() => {
+    const event = new CustomEvent('myGlobalEvent', { detail: 'Hello from global event!' });
+    window.dispatchEvent(event);
+  }, 5000);
+}
+
+sendGlobalEvent();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <App />
