@@ -11,7 +11,7 @@ import DemoUseRef from "./component/DemoUseRef";
 import DemoMemoWrapper from "./component/DemoMemoWraper";
 import DemoUseMemo from "./component/DemoUseMemo";
 import DemoUseReducer from "./component/DemoUseReducer";
-
+import DemoUseContext from "./component/DemoUseContext";
 function App() {
   return (
     <>
@@ -26,6 +26,7 @@ function App() {
         <Link to="/demo-memo">Demo Memo</Link> |{" "}
         <Link to="/use-memo">Demo useMemo</Link> |{" "}
         <Link to="/use-reducer">Demo useReducer</Link> |{" "}
+        <Link to="/demo-use-context">Demo useContext</Link>
       </nav>
 
       <Routes>
@@ -40,6 +41,7 @@ function App() {
         <Route path="/demo-memo" element={<DemoMemoWrapper />} />
         <Route path="/use-memo" element={<DemoUseMemo />} />
         <Route path="/use-reducer" element={<DemoUseReducer />} />
+        <Route path="/demo-use-context" element={<DemoUseContext />} />
       </Routes>
     </>
   );
