@@ -20,13 +20,13 @@ function DemoUseReducer() {
 
     const inputRef = useRef(null);
 
-    const handleAddTask =(value) =>{
+    const handleAddTask =(value: string) =>{
         dispatchTask({ type: ACTIONS.ADD_TASK, payload: value })
         dispatchTask({ type: ACTIONS.UPDATE_INPUT, payload: '' })
         inputRef?.current?.focus();
     }
 
-    const handleDeleteTask = (index) =>{
+    const handleDeleteTask = (index : number) =>{
         dispatchTask({ type: ACTIONS.REMOVE_TASK, payload: index })
         dispatchTask({ type: ACTIONS.UPDATE_INPUT, payload: '' })
            inputRef?.current?.focus();
@@ -56,7 +56,7 @@ function DemoUseReducer() {
             <button onClick={() => handleAddTask(tasks.task)}>Add Todo</button>
             <ul>
                 {
-                    tasks.tasks.map((item, index) => (
+                    tasks.tasks.map(( item :string, index: number) => (
                         <li key={index}>{item} 
                         <button onClick={() => handleDeleteTask(index)}>Remove</button>
                         </li>
