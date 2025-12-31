@@ -9,6 +9,8 @@ import DemoPreviewAvatar from "./component/DemoPreviewAvatar";
 import DemoGlobalEvent from "./component/DemoGlobalEvent";
 import DemoUseRef from "./component/DemoUseRef";
 import DemoMemoWrapper from "./component/DemoMemoWraper";
+import DemoUseMemo from "./component/DemoUseMemo";
+
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
         <Link to="/todo-list">Todo List</Link>  |{" "}
         <Link to="/preview-avatar">Preview Avatar</Link> |{" "}
         <Link to="/global-event">Global Event Demo</Link>  |{" "}
-         <Link to="/use-ref">Use Ref Demo</Link> |{" "}
-         <Link to="/demo-memo">Demo Memo</Link>
+        <Link to="/use-ref">Use Ref Demo</Link> |{" "}
+        <Link to="/demo-memo">Demo Memo</Link> |{" "}
+        <Link to="/use-memo">Demo useMemo</Link> |{" "}
       </nav>
 
       <Routes>
@@ -34,6 +37,7 @@ function App() {
         <Route path="/global-event" element={<DemoGlobalEvent />} />
         <Route path="/use-ref" element={<DemoUseRef />} />
         <Route path="/demo-memo" element={<DemoMemoWrapper />} />
+        <Route path="/use-memo" element={<DemoUseMemo />} />
       </Routes>
     </>
   );
