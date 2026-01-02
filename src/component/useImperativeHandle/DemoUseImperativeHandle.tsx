@@ -1,4 +1,4 @@
-import {useRef,useImperativeHandle } from 'react';
+import {useRef } from 'react';
 import Video from './video';
 function DemoUseImperativeHandle() {
     const videoRef = useRef<HTMLVideoElement>(null);
